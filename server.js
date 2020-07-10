@@ -105,6 +105,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: err.toString() });
 });
 
-app.listen(3001, () => {
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
   console.log(`Server ready at http://localhost:3001`);
 });
