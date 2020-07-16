@@ -38,9 +38,15 @@ const insertUserQuery = `
 INSERT INTO user 
   (name)
 VALUES
-  ('keval');
+  ('Bob');
   
 `;
+const deleteCommentQuery=`
+delete from comment;
+`
+const deletequery=`
+delete from reply;
+`
 
 const db = new sqlite.Database(
   dbFilePath,
@@ -58,6 +64,12 @@ db.serialize(() => {
   console.log("[✔️] Added reply table successfully");
 
   db.run(insertUserQuery);
+  console.log("[✔️] insert seed data successfully");
+  
+  db.run(deletequery);
+  console.log("[✔️] insert seed data successfully");
+  
+  db.run(deleteCommentQuery);
   console.log("[✔️] insert seed data successfully");
 });
 
