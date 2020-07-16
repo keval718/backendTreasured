@@ -32,12 +32,14 @@ CREATE TABLE IF NOT EXISTS reply (
 );
 `;
 
+
+
 const insertUserQuery = `
 INSERT INTO user 
   (name)
 VALUES
-  ('Alice'),
-  ('Bob');
+  ('keval');
+  
 `;
 
 const db = new sqlite.Database(
@@ -56,7 +58,7 @@ db.serialize(() => {
   console.log("[✔️] Added reply table successfully");
 
   db.run(insertUserQuery);
-  console.log("[✔️] Inserted seed data successfully");
+  console.log("[✔️] insert seed data successfully");
 });
 
 db.close();
